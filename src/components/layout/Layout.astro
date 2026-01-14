@@ -1,0 +1,31 @@
+---
+// 1. ZONA DE JAVASCRIPT / TYPESCRIPT (Entre los guiones triples)
+// Aquí definimos qué datos necesita este esqueleto para funcionar.
+
+interface Props {
+	title: string; // Decimos: "Oye, para usar este Layout, OBLIGATORIAMENTE dame un título".
+}
+
+const { title } = Astro.props; // Aquí extraemos el título que nos envíen.
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portafolio Profesional de Desarrollador" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<title>{title}</title>
+	</head>
+	
+	<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+		
+		<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+			<slot />
+		</main>
+
+	</body>
+</html>
