@@ -1,23 +1,12 @@
 ---
-// Importamos el esqueleto que acabamos de crear
 import Layout from '../components/layout/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
 ---
 
-<Layout title="Porfolio de Programador - Inicio">
+<Layout title="Portafolio de Programador - Inicio">
 	
-	<section class="py-20">
-		<h1 class="text-5xl font-bold text-white mb-6">
-			Hola, soy <span class="text-blue-500">Programador</span>
-		</h1>
-		
-		<p class="text-xl text-gray-300 mb-8">
-			Este es el comienzo de mi nuevo portafolio profesional 2025.
-			Construido con Astro, React y Tailwind.
-		</p>
-
-		<button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors">
-			Contáctame
-		</button>
-	</section>
+	<Hero />
+	
+	<div class="h-[1000px]"></div>
 
 </Layout>
