@@ -1,0 +1,57 @@
+---
+// About.astro
+const skills = [
+  "Astro", "React", "Tailwind CSS", "TypeScript", "Neuromarketing", "Git"
+];
+---
+
+<section id="sobre-mi" class="py-20 bg-slate-900/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl font-bold text-white">Sobre mí</h2>
+            <div class="h-px bg-blue-500/50 flex-grow max-w-xs"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Hola, soy un desarrollador apasionado por crear soluciones digitales que <span class="text-blue-400 font-medium">funcionan tan bien como se ven</span>.
+                </p>
+                
+                <p class="text-gray-400">
+                    Hace más de 10 años empecé escribiendo mis primeras líneas de código. Hoy, combino esa experiencia técnica con principios de <strong class="text-white">Neuromarketing</strong> para construir webs que no solo informan, sino que persuaden y convierten.
+                </p>
+
+                <p class="text-gray-400">
+                    Mi enfoque es simple: código limpio, diseño estratégico y una obsesión saludable por el rendimiento.
+                </p>
+
+                <div class="pt-4">
+                    <h3 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Tecnologías actuales</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {skills.map((skill) => (
+                            <span class="px-4 py-2 rounded-full bg-slate-800 text-blue-300 text-sm border border-slate-700 hover:border-blue-500 transition-colors cursor-default">
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg"></div>
+                
+                <div class="relative bg-slate-800 rounded-2xl overflow-hidden border border-white/10 aspect-square flex items-center justify-center">
+                    
+                    <svg class="w-32 h-32 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
