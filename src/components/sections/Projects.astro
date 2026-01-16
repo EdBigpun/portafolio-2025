@@ -1,34 +1,30 @@
 ---
-// 1. ZONA DE LÓGICA (TypeScript)
-
-// Definimos la estructura obligatoria de un proyecto
+// Projects.astro
 interface Project {
   title: string;
   description: string;
-  tags: string[]; // Un array de textos (ej: ['React', 'CSS'])
-  link: string;   // Enlace al proyecto o GitHub
+  tags: string[];
+  link: string;
 }
 
-// Aquí están tus proyectos. 
-// TIP: Cuando tengas proyectos reales, solo cambias estos textos.
 const projects: Project[] = [
   {
-    title: "E-commerce Dashboard",
-    description: "Panel de administración moderno con gráficos en tiempo real y gestión de inventario. Optimizado para carga rápida.",
-    tags: ["React", "Tailwind", "Recharts"],
-    link: "#", // Pon aquí el link real cuando lo tengas
+    title: "Wheeelz (Colaborativo)",
+    description: "Proyecto de desarrollo colaborativo enfocado en soluciones de movilidad. Desarrollado en equipo aplicando control de versiones con Git y metodología ágil.",
+    tags: ["React", "Teamwork", "Git"], 
+    link: "https://github.com/EdBigpun", // Actualizar al link directo del repo
   },
   {
-    title: "Landing Page Corporativa",
-    description: "Sitio web de alto impacto para una agencia de marketing, con animaciones suaves y SEO optimizado.",
-    tags: ["Astro", "TypeScript", "Motion"],
-    link: "#",
+    title: "Sistema CRUD de Clientes",
+    description: "Sistema completo de gestión de clientes. Backend robusto con Java Spring Boot y frontend interactivo. Permite crear, leer, actualizar y eliminar registros.",
+    tags: ["Java", "Spring Boot", "React", "MySQL"],
+    link: "https://github.com/EdBigpun",
   },
   {
-    title: "App de Gestión de Tareas",
-    description: "Aplicación progresiva (PWA) para organizar tareas diarias con modo oscuro y almacenamiento local.",
-    tags: ["React", "LocalStorage", "CSS Modules"],
-    link: "#",
+    title: "Generador de Facturas PDF",
+    description: "Aplicación web para automatizar la creación de facturas. Permite ingresar datos de clientes y productos, generando documentos PDF listos para imprimir.",
+    tags: ["React", "Node.js", "PDFKit"],
+    link: "https://github.com/EdBigpun",
   }
 ];
 ---
@@ -41,14 +37,12 @@ const projects: Project[] = [
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
             {projects.map((project) => (
-                
                 <article class="bg-slate-800/50 rounded-xl overflow-hidden border border-white/10 hover:border-blue-500/50 transition-all hover:-translate-y-2 group">
                     
                     <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-800 w-full relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 font-medium">
-                            Imagen del Proyecto
+                         <div class="absolute inset-0 flex items-center justify-center text-slate-500 font-medium px-4 text-center">
+                            {project.title}
                          </div>
                     </div>
 
@@ -69,17 +63,15 @@ const projects: Project[] = [
                             ))}
                         </div>
 
-                        <a href={project.link} class="inline-flex items-center text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
-                            Ver detalles 
+                        <a href={project.link} target="_blank" class="inline-flex items-center text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
+                            Ver código 
                             <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
                     </div>
                 </article>
-
             ))}
-
         </div>
     </div>
 </section>
